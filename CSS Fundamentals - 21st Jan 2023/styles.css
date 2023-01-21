@@ -1,0 +1,45 @@
+/* Global / Universal Selector */
+* {
+    font-family: 'Roboto';
+}
+
+
+/* HTML Selectors / Tag Selectors */
+
+body {
+    background-color: beige;
+}
+
+section {
+    background-color: pink;
+}
+
+p {
+    background-color: aquamarine;
+}
+
+
+span {
+    background-color: yellow;
+}
+
+h1 {
+    color: red;
+    background-color: cyan;
+}
+
+/* Class Selector */
+.sectionTitle {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* ID Selector */
+#specialTitle {
+    color: green;
+    text-transform: capitalize;
+}
+
+/* <h1 id="specialTitle" class="sectionTitle">This is a heading </h1> */
+
+/* Specificity : ID > Class > Element Selector > Global Selector */
