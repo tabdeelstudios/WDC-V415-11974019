@@ -35,9 +35,9 @@ let output = "";
 
 allEvents.forEach((event) => {
   let eachEvent = `<div class="event">
-  <h1>${event.name}</h1>
-  <h3>${event.duration}</h3>
-  </div>`;
+    <h1>${event.name}</h1>
+    <h3>${event.duration}</h3>
+    </div>`;
   output += eachEvent;
 });
 

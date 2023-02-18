@@ -49,3 +49,32 @@
 // let heading = document.querySelector("h1");
 // let headingID = heading.getAttribute("id");
 // console.log(headingID);
+
+// Reading values from form fields
+// function validateForm() {
+//   let userName = document.forms["loginForm"]["userName"].value;
+//   let userPassword = document.forms["loginForm"]["userPassword"].value;
+//   if (userName.length == 0) {
+//     document.getElementById("userNameError").innerText =
+//       "Please enter a username";
+//     document.getElementById("userNameError").style.color = "red";
+//     return false;
+//   }
+// }
+
+// Handling events
+// let button = document.querySelector("button");
+// button.addEventListener("click", changeBG);
+// button.addEventListener("dblclick", resetBG);
+
+// let heading = document.querySelector("h1");
+// heading.addEventListener("mouseover", changeBG);
+// heading.addEventListener("mouseout", resetBG);
+
+// function changeBG() {
+//   document.querySelector("h1").style.backgroundColor = "pink";
+// }
+
+// function resetBG() {
+//   document.querySelector("h1").style.backgroundColor = "transparent";
+// }
