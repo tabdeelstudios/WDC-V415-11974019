@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 id="counter1"></h1>
+    <h2 id="counter2"></h2>
+    <button onclick="stopCount1()">Stop count 1</button>
+    <button onclick="stopCount2()">Stop count 2</button> -->
+    <h1>Loading....</h1>
+    <button onclick="stopLoad()">Stop loading</button>
+    <script>
+      let myTimeout = setTimeout(() => {
+        document.querySelector("h1").innerText = "Content loaded!";
+      }, 3000);
+      function stopLoad() {
+        clearTimeout(myTimeout);
+      }
+      //   let counter1 = 0;
+      //   let counter2 = 0;
+      //   let counterOneInterval = setInterval(increaseCounterOne, 4000);
+      //   let counterTwoInterval = setInterval(increaseCounterTwo, 2000);
+      //   function increaseCounterOne() {
+      //     counter1++;
+      //     document.getElementById("counter1").innerText = counter1;
+      //   }
+      //   function increaseCounterTwo() {
+      //     counter2++;
+      //     document.getElementById("counter2").innerText = counter2;
+      //   }
+      //   function stopCount1() {
+      //     clearInterval(counterOneInterval);
+      //   }
+      //   function stopCount2() {
+      //     clearInterval(counterTwoInterval);
+      //   }
+    </script>
+  </body>
+</html>

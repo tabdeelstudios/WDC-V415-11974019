@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form action="#" method="GET" name="loginForm">
+      <div>
+        <label for="userName">User Name* : </label>
+        <input
+          id="userName"
+          required
+          minlength="8"
+          maxlength="20"
+          type="text"
+          name="userName"
+          placeholder="Name"
+        />
+      </div>
+      <input
+        required
+        minlength="8"
+        type="password"
+        name="userPassword"
+        placeholder="Password"
+      /><br />
+      <input disabled type="email" name="userEmail" placeholder="Email" /><br />
+      <input
+        required
+        min="18"
+        max="120"
+        type="number"
+        name="userAge"
+        placeholder="Age"
+      /><br />
+      <input type="range" min="1" max="10" step="1" />
+      <input type="checkbox" checked />I agree to terms and conditions.<br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

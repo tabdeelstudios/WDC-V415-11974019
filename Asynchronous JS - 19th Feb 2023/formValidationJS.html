@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style></style>
+  </head>
+  <body>
+    <form action="#" method="GET" name="loginForm" onsubmit="validateForm()">
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        placeholder="Name"
+        onkeyup="checkName()"
+      />
+      <p id="userNameError"></p>
+
+      <input type="password" name="userPassword" placeholder="Password" /><br />
+      <input type="email" name="userEmail" placeholder="Email" /><br />
+      <input type="number" name="userAge" placeholder="Age" /><br />
+      <input type="checkbox" />I agree to terms and conditions.<br />
+      <input type="submit" />
+    </form>
+    <script>
+      function validateForm() {
+        event.preventDefault();
+      }
+
+      function checkName() {
+        let userName = document.forms["loginForm"]["userName"].value;
+        if (
+          (userName.length <= 6 && userName.length >= 20) ||
+          userName.length == 0
+        ) {
+          document.getElementById("userNameError").innerText =
+            "Please enter a username between 6 and 20";
+          document.getElementById("userName").style.border = "1px solid red";
+          return false;
+        } else {
+          document.getElementById("userNameError").innerText = "";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+    Username - mandatory, between 6 and 15 characters
+    Password - mandatory, between 8 and 20 characters
+    Number - between 18 and 120
+ -->
