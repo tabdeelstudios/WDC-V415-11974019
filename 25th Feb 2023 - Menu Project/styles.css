@@ -1,0 +1,85 @@
+/* font-family: 'Lato', sans-serif;
+font-family: 'Noto Serif', serif; */
+body{
+    font-family: 'Lato';
+    background-color: rgb(240, 253, 255);
+}
+
+h1{
+    font-family: 'Noto Serif';
+    text-align: center;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+#headingLine{
+    margin-top: 10px;
+    width: 7%;
+    height: 3px;
+    background-color: rgb(240, 165, 95);
+}
+
+#buttons{
+    text-align: center;
+}
+
+button{
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(240, 165, 95);
+    background-color: transparent;
+    font-size: 16px;
+    box-shadow: 0px 2px 2px black;
+    color:rgb(240, 165, 95);
+} 
+
+button:hover{
+    background-color: rgb(240, 165, 95);
+    color: white;
+    cursor: pointer;
+}
+
+.dish{
+    display: flex;
+    align-items: flex-start;
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+.inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dishImage{
+    width: 200px;
+    border: 5px solid rgb(240, 165, 95);
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+#dishes{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dishName, .dishPrice{
+    font-family: 'Noto Serif';
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+}
+
+.dishPrice{
+    color: rgb(240, 165, 95);
+}
+
+.dishContent{
+    opacity: 0.75;
+}
