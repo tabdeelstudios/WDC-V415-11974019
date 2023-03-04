@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+}
+
+header>div{
+    width: 40%;
+}
+
+header>img{
+    height: 350px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header>div>button{
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+}
+
+header>div>button:hover{
+    background-color: rgb(46, 77, 171);
+    cursor: pointer;
+}
