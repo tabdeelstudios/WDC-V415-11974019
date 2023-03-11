@@ -1,0 +1,11 @@
+#reasons{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 20px;
+    padding: 50px;
+}
+
+.bi{
+    font-size: 32px;
+}

@@ -1,0 +1,31 @@
+header{
+    background-image: url('../assets/images/kateryna-hliznitsova-lMD8hWy-FH8-unsplash.jpg');
+    padding: 100px;
+    text-align: center;
+    background-size: cover;
+}
+
+header h1{
+    color: royalblue;
+    background-color: rgba(255, 255, 255, 0.69);
+    width: 35%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+header button{
+    background-color: royalblue;
+    padding: 12px 20px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 50px;
+    font-size: 18px;
+    border: none;
+}
+
+header button:hover{
+    background-color: white;
+    color: royalblue;
+    cursor: pointer;
+}

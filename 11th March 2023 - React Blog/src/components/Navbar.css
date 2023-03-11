@@ -1,0 +1,19 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+    background-color: royalblue;
+    
+}
+
+nav .navLink{
+    padding-left: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+nav .navLink:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
