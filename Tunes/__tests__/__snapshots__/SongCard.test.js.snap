@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Assignment - SuperTunes - SongCard Component SongCard component renders perfectly! 1`] = `"<div class=\\"song-card\\"><img src=\\"someimage.jpg\\" alt=\\"We didn't start the fire\\" class=\\"st-thumb\\"><div class=\\"song-title\\">We didn't start the fire by Billy Joel</div><div class=\\"rating\\"><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div></div></div>"`;

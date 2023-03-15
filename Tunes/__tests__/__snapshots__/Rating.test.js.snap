@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Assignment - SuperTunes - Rating Component Rating component renders perfectly! 1`] = `"<div class=\\"rating\\"><div class=\\"star\\"></div></div>"`;
+
+exports[`Assignment - SuperTunes - Rating Component Rating component renders perfectly! 2`] = `"<div class=\\"rating\\"><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div></div>"`;
+
+exports[`Assignment - SuperTunes - Rating Component Rating component renders perfectly! 3`] = `"<div class=\\"rating\\"><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div></div>"`;
+
+exports[`Assignment - SuperTunes - Rating Component Rating component renders perfectly! 4`] = `"<div class=\\"rating\\"><div class=\\"star\\"></div><div class=\\"star\\"></div><div class=\\"star\\"></div></div>"`;
