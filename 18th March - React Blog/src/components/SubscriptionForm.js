@@ -26,7 +26,12 @@ class SubscriptionForm extends React.Component {
         this.state
       )
       .then(() => {
-        this.setState({ isSubscribed: true });
+        this.setState({
+          isSubscribed: true,
+          useremail: "",
+          username: "",
+          isChecked: false,
+        });
       });
   };
 
@@ -40,6 +45,7 @@ class SubscriptionForm extends React.Component {
             <input
               type="text"
               id="username"
+              value={this.state.username}
               placeholder="Your name"
               onChange={this.readFormData}
             />
@@ -49,19 +55,31 @@ class SubscriptionForm extends React.Component {
             <input
               type="email"
               id="useremail"
+              value={this.state.useremail}
               placeholder="Your email"
               onChange={this.readFormData}
             />
           </div>
           <div>
             <p>
-              <input
-                type="checkbox"
-                onClick={() => {
-                  this.setState({ isChecked: true });
-                  console.log(this.state);
-                }}
-              />
+              {this.state.isChecked ? (
+                <input
+                  type="checkbox"
+                  checked
+                  onClick={() => {
+                    this.setState({ isChecked: true });
+                    console.log(this.state);
+                  }}
+                />
+              ) : (
+                <input
+                  type="checkbox"
+                  onClick={() => {
+                    this.setState({ isChecked: true });
+                    console.log(this.state);
+                  }}
+                />
+              )}
               I agree to terms and conditions
             </p>
           </div>
