@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import SubscriptionForm from "../components/SubscriptionForm";
 
 function AboutPage() {
   return (
@@ -11,6 +12,7 @@ function AboutPage() {
         cupidatat nulla sit. Nulla amet Lorem est in occaecat aute. Dolor
         excepteur non ullamco ipsum officia magna esse.
       </p>
+      <SubscriptionForm />
       <Footer />
     </>
   );
