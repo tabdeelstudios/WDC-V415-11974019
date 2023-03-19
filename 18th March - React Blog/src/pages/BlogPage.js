@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "./../components/Footer";
 import Navbar from "../components/Navbar";
 import "./BlogPage.css";
-import AllSubscribers from "../components/AllSubscribers";
+import AllPosts from "../components/AllPosts";
 
 class BlogPage extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class BlogPage extends React.Component {
             Liked {this.state.likes}
           </button>
         )}
-        <AllSubscribers />
+        <AllPosts />
         <Footer />
       </>
     );
