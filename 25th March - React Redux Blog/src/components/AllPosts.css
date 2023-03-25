@@ -1,0 +1,17 @@
+#blogs{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.blog{
+    border: 1px solid black;
+    width: 26%;
+    border-radius: 10px;
+    padding: 10px;
+    margin:10px;
+}
+
+.blog:hover{
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.187);
+}
