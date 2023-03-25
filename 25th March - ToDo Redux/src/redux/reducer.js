@@ -10,10 +10,22 @@ const addToDoReducer = createSlice({
       state.push(action.payload);
       return state;
     },
+    completedToDos: (state, action) => {
+      console.log(action.payload);
+      return state.map((todo) => {
+        if (todo.id == action.payload.id) {
+          return {
+            ...todo,
+            completed: true,
+          };
+        }
+        return todo;
+      });
+    },
   },
 });
 
-export const { addToDos } = addToDoReducer.actions;
+export const { addToDos, completedToDos } = addToDoReducer.actions;
 export const reducer = addToDoReducer.reducer;
 
 // npm install react-redux @reduxjs/toolkit

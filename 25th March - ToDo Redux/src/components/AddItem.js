@@ -27,6 +27,7 @@ const AddItem = (props) => {
         item: toDo,
         completed: false,
       });
+      setTodo("");
     }
   };
 
