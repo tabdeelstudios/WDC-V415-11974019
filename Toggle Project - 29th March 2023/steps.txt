@@ -1,0 +1,5 @@
+Step 1. Create the data (done)
+Step 2. Map the data on the screen (done)
+Step 3. Create the toggle button
+Step 4. Attach the eventListener / onclick to the button
+Step 5. Work on the toggle functionality 
