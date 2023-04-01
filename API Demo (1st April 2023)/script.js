@@ -19,43 +19,43 @@
 
 // https://jsonplaceholder.typicode.com/posts
 
-let postsButton = document.getElementById("postsButton");
-postsButton.addEventListener("click", getPosts);
+// let postsButton = document.getElementById("postsButton");
+// postsButton.addEventListener("click", getPosts);
 
-function getPosts() {
-  let myRequest = new XMLHttpRequest(); // readystate = 0
-  myRequest.open("GET", "https://jsonplaceholder.typicode.com/posts"); // readystate = 1
-  myRequest.send(); //readyState = 2
-  //while it is being processed by the server, readyState = 3
-  //after the server sends the response, readyState = 4
-  myRequest.onreadystatechange = () => {
-    if (myRequest.readyState < 4) {
-      document.getElementById("loadingBanner").style.display = "block";
-    } else if (myRequest.readyState == 4 && myRequest.status == 200) {
-      document.getElementById("loadingBanner").style.display = "none";
-      let convertedData = JSON.parse(myRequest.responseText);
-      console.log(myRequest.responseText);
-      document.getElementById("allPosts").innerHTML += convertedData
-        .map(
-          (item) =>
-            `<div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.body}</p>
-                        <a href="https://jsonplaceholder.typicode.com/posts/${item.id}" class="btn btn-primary">Read Post</a>
-                    </div>
-                </div>
-            </div>`
-        )
-        .join("");
-    } else {
-      document.getElementById("loadingBanner").innerHTML =
-        "Something went wrong";
-      document.getElementById("loadingBanner").style.display = "block";
-    }
-  };
-}
+// function getPosts() {
+//   let myRequest = new XMLHttpRequest(); // readystate = 0
+//   myRequest.open("GET", "https://jsonplaceholder.typicode.com/posts"); // readystate = 1
+//   myRequest.send(); //readyState = 2
+//   //while it is being processed by the server, readyState = 3
+//   //after the server sends the response, readyState = 4
+//   myRequest.onreadystatechange = () => {
+//     if (myRequest.readyState < 4) {
+//       document.getElementById("loadingBanner").style.display = "block";
+//     } else if (myRequest.readyState == 4 && myRequest.status == 200) {
+//       document.getElementById("loadingBanner").style.display = "none";
+//       let convertedData = JSON.parse(myRequest.responseText);
+//       console.log(myRequest.responseText);
+//       document.getElementById("allPosts").innerHTML += convertedData
+//         .map(
+//           (item) =>
+//             `<div class="col">
+//                 <div class="card">
+//                     <div class="card-body">
+//                         <h5 class="card-title">${item.title}</h5>
+//                         <p class="card-text">${item.body}</p>
+//                         <a href="https://jsonplaceholder.typicode.com/posts/${item.id}" class="btn btn-primary">Read Post</a>
+//                     </div>
+//                 </div>
+//             </div>`
+//         )
+//         .join("");
+//     } else {
+//       document.getElementById("loadingBanner").innerHTML =
+//         "Something went wrong";
+//       document.getElementById("loadingBanner").style.display = "block";
+//     }
+//   };
+// }
 
 // async function fetchPosts() {
 //   await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -98,3 +98,36 @@ function getPosts() {
 //         .join("");
 //     });
 // }
+
+window.onload(getUserData());
+
+function getUserData() {
+  let myRequest = new XMLHttpRequest();
+  myRequest.open("GET", "https://randomuser.me/api");
+  myRequest.send();
+  myRequest.onreadystatechange = () => {
+    if (myRequest.readyState < 4) {
+      document.getElementById("loadingBanner").style.display = "block";
+    } else if (myRequest.readyState == 4 && myRequest.status == 200) {
+      document.getElementById("loadingBanner").style.display = "none";
+      document.getElementById("userCard").style.display = "block";
+      let convertedData = JSON.parse(myRequest.responseText);
+      console.log(convertedData);
+      document
+        .getElementById("userImage")
+        .setAttribute("src", convertedData.results[0].picture.medium);
+      document.getElementById("userName").innerText =
+        convertedData.results[0].name.first +
+        " " +
+        convertedData.results[0].name.last;
+      document.getElementById("userName2").innerText =
+        convertedData.results[0].name.first +
+        " " +
+        convertedData.results[0].name.last;
+    } else {
+      document.getElementById("loadingBanner").innerHTML =
+        "Something went wrong";
+      document.getElementById("loadingBanner").style.display = "block";
+    }
+  };
+}
