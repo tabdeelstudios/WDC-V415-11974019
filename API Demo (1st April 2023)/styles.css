@@ -1,0 +1,13 @@
+/* #allPosts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post{
+    width: 30%;
+} */
+
+.card{
+    margin-bottom: 20px;
+}
