@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function UserProfile() {
+function UserProfile(props) {
   const [userData, setUserData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -21,6 +21,7 @@ function UserProfile() {
     <>
       {isLoaded ? (
         <div>
+          <h1>User ID : {props.id}</h1>
           <img src={userData.results[0].picture.medium} />
           <h1>{userData.results[0].name.first}</h1>
           <p>{userData.results[0].email}</p>
