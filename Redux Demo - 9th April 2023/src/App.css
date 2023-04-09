@@ -1,0 +1,27 @@
+.panel-light{
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+}
+
+.panel-dark{
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+}
+
+.button-dark{
+  background-color: white;
+  color: black;
+  padding: 20px 40px;
+  border-radius: 15px;
+}
+
+.button-light{
+  background-color: black;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 15px;
+}

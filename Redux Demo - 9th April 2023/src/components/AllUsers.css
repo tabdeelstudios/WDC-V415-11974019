@@ -1,0 +1,14 @@
+#allUsers{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.individual-user{
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
