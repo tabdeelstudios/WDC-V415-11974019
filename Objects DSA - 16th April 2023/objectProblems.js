@@ -34,45 +34,49 @@
 
 // Q2. Check if the user credentials match with the stored data. Return a "Login successful" or "Incorrect details" accordingly.
 // Input : username -> jane123, password -> jane321
-// let username = "john12323r23";
-// let password = "john123";
+let username = "john123";
+let password = "john123";
 
-// let users = [
-//   {
-//     id: 1,
-//     name: "John",
-//     username: "john123",
-//     password: "john123",
-//   },
-//   {
-//     id: 2,
-//     name: "Jane",
-//     username: "jane123",
-//     password: "jane123",
-//   },
-//   {
-//     id: 3,
-//     name: "jenny",
-//     username: "jenny123",
-//     password: "jenny123",
-//   },
-//   {
-//     id: 4,
-//     name: "bob",
-//     username: "bob123",
-//     password: "bob123",
-//   },
-// ];
+let users = [
+  {
+    id: 1,
+    name: "John",
+    username: "john123",
+    password: "john123",
+  },
+  {
+    id: 2,
+    name: "Jane",
+    username: "jane123",
+    password: "jane123",
+  },
+  {
+    id: 3,
+    name: "jenny",
+    username: "jenny123",
+    password: "jenny123",
+  },
+  {
+    id: 4,
+    name: "bob",
+    username: "bob123",
+    password: "bob123",
+  },
+];
 
-// let result = "";
+let result = "";
 
-// for (let index = 0; index < users.length; index++) {
-//   if (users[index].username == username && users[index].password == password) {
-//     result = "Login successful";
-//     break;
-//   } else {
-//     result = "Invalid details";
-//   }
-// }
+for (let index = 0; index < users.length; index++) {
+  if (users[index].username == username) {
+    if (users[index].password == password) {
+      result = "Login successful";
+      break;
+    } else {
+      result = "Invalid details";
+    }
+  } else {
+    result = "User doesn't exist";
+  }
+}
 
-// console.log(result);
+console.log(result);
