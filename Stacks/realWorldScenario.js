@@ -42,13 +42,21 @@ class Stack {
 
 let myStack = new Stack();
 
-myStack.insert(10);
-myStack.insert(20);
-myStack.insert(30);
-myStack.insert(40);
-myStack.insert(50);
-myStack.print();
-console.log(myStack.remove() + " removed from Stack!");
-console.log(myStack.remove() + " removed from Stack!");
-myStack.print();
-myStack.peek();
+function submitReview(event) {
+  event.preventDefault();
+  myStack.insert({
+    name: document.getElementById("username").value,
+    review: document.getElementById("review").value,
+  });
+  console.log(myStack);
+}
+
+function deleteReview() {
+  myStack.remove();
+  console.log("After deletion : ");
+  console.log(myStack);
+}
+
+var form = document.getElementById("reviewForm");
+
+form.addEventListener("submit", submitReview, true);

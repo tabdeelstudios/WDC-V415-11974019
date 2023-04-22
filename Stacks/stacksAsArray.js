@@ -50,3 +50,4 @@ myStack.print();
 console.log(myStack.remove() + " removed from Stack!");
 console.log(myStack.remove() + " removed from Stack!");
 myStack.print();
+myStack.peek();
