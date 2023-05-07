@@ -31,7 +31,19 @@ const AddProduct = () => {
         <input type="submit" value="Add Product" />
       </form>
       <p>{message}</p>
-
+      <hr />
+      <button
+        onClick={() => {
+          axios
+            .delete("http://localhost:3000/addProduct", {
+              name: allProducts[0].name,
+            })
+            .then((response) => setMessage(response.data.message));
+        }}
+      >
+        Delete
+      </button>
+      <hr />
       <ul>
         {allProducts && allProducts.map((product) => <li>{product.name}</li>)}
       </ul>
