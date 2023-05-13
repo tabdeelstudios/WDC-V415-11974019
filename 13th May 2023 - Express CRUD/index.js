@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 let allReviews = [
   {
@@ -42,7 +44,9 @@ app.post("/add", (req, res) => {
 
 app.patch("/update/:id", (req, res) => {
   let reviewID = parseInt(req.params.id);
+  console.log(reviewID);
   let updateTitle = req.body.title;
+  console.log(req.body);
   let index = allReviews.findIndex((review) => review.id === reviewID);
   let originalReview = allReviews[index];
   originalReview.title = updateTitle;
