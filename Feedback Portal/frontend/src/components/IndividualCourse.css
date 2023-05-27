@@ -1,0 +1,11 @@
+.courseDetails{
+    display: flex;   
+}
+
+.courseDetails div{
+    margin-left: 30px;
+}
+
+.courseDetails img{
+    width: 30%;
+}

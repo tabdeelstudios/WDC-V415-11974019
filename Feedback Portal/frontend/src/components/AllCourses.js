@@ -22,6 +22,8 @@ const AllCourses = () => {
             allCourses.map((course) => (
               <Col>
                 <CourseCard
+                  key={course._id}
+                  id={course._id}
                   courseImg={course.courseImg}
                   title={course.title}
                   price={course.price}
