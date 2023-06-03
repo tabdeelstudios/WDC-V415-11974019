@@ -24,6 +24,13 @@ app.get("/courseDetails/:id", async (req, res) => {
   res.json(courseData);
 });
 
+app.post("/courseFeedback/:id", async (req, res) => {
+  const doc = await CourseModel.findById(req.params.id);
+  doc.feedback.push(req.body);
+  await doc.save();
+  res.end();
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
   mongoose.connect(uri);

@@ -6,6 +6,7 @@ const TechCourse = new Schema({
   duration: String,
   category: String,
   courseImg: String,
+  feedback: Array,
 });
 
 module.exports = { TechCourse };
