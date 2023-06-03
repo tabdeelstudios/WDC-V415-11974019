@@ -30,10 +30,10 @@ const IndividualCourse = () => {
                 <Nav.Link eventKey="first">Details</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="second">Submissions</Nav.Link>
+                <Nav.Link eventKey="second">Feedback</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="third">Submit Now</Nav.Link>
+                <Nav.Link eventKey="third">Review Now</Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
@@ -51,7 +51,14 @@ const IndividualCourse = () => {
                 </div>
               </Tab.Pane>
               <Tab.Pane eventKey="second">
-                <p>Course submissions go here</p>
+                <div>
+                  {courseData.feedback &&
+                    courseData.feedback.map((feedback) => (
+                      <p>
+                        {feedback.courseFeedback} - {feedback.studentName}
+                      </p>
+                    ))}
+                </div>
               </Tab.Pane>
               <Tab.Pane eventKey="third">
                 <p>
