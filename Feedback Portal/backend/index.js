@@ -8,13 +8,26 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
 
+var session = require("express-session");
+
 const uri = process.env.mongodbString;
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
+
 app.use(passport.initialize());
+app.use(passport.session());
 
 const User = require("./schemas/UserSchema");
 
@@ -58,7 +71,10 @@ app.post("/register", function (req, res) {
         });
       }
     }
-  );
+  ).then(() => {
+    passport.serializeUser(User.serializeUser());
+    passport.deserializeUser(User.deserializeUser());
+  });
 });
 
 app.post("/login", function (req, res) {
@@ -77,10 +93,14 @@ app.post("/login", function (req, res) {
             message: "username or password incorrect",
           });
         } else {
-          res.json({
-            success: true,
-            message: "Authentication successful",
-          });
+          res.json(
+            {
+              success: true,
+              message: "Authentication successful",
+            },
+            passport.serializeUser(User.serializeUser()),
+            passport.deserializeUser(User.deserializeUser())
+          );
         }
       }
     })(req, res);
