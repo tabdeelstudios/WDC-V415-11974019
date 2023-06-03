@@ -11,8 +11,9 @@ import "./IndividualCourse.css";
 const IndividualCourse = () => {
   const [courseData, setCourseData] = useState("");
   const { id } = useParams();
+  const [studentName, setStudentName] = useState("");
+  const [courseFeedback, setCourseFeedback] = useState("");
 
-  console.log(id);
   useEffect(() => {
     axios
       .get(`http://localhost:3001/courseDetails/${id}`)
@@ -53,7 +54,47 @@ const IndividualCourse = () => {
                 <p>Course submissions go here</p>
               </Tab.Pane>
               <Tab.Pane eventKey="third">
-                <p>Course form goes here</p>
+                <p>
+                  <form
+                    method="POST"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      axios.post(`http://localhost:3001/courseFeedback/${id}`, {
+                        studentName,
+                        courseFeedback,
+                      });
+                      setStudentName("");
+                      setCourseFeedback("");
+                    }}
+                  >
+                    <div>
+                      <label htmlFor="studentName">Name : </label>
+                      <input
+                        type="text"
+                        value={studentName}
+                        id="studentName"
+                        onChange={(e) => {
+                          setStudentName(e.target.value);
+                          console.log(studentName);
+                        }}
+                      />
+                    </div>
+                    <br />
+                    <div>
+                      <label htmlFor="courseFeedback">Feedback : </label>
+                      <textarea
+                        value={courseFeedback}
+                        id="courseFeedback"
+                        onChange={(e) => {
+                          setCourseFeedback(e.target.value);
+                          console.log(courseFeedback);
+                        }}
+                      ></textarea>
+                    </div>
+                    <br />
+                    <input type="submit" />
+                  </form>
+                </p>
               </Tab.Pane>
             </Tab.Content>
           </Col>
