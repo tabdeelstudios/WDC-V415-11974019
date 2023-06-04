@@ -18,7 +18,9 @@ const SignupStudent = () => {
             password: password,
           })
           .then((res) =>
-            res.data.success === true ? null : setUserMessage(res.data.message)
+            res.data.success === true
+              ? (window.location.href = "/login")
+              : setUserMessage(res.data.message)
           );
       }}
     >
