@@ -4,13 +4,17 @@ import CourseCard from "./CourseCard";
 import Container from "react-bootstrap/Container";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourses } from "../redux/courseSlice";
 
 const AllCourses = () => {
-  const [allCourses, setAllCourses] = useState("");
+  const allCourses = useSelector((state) => state);
+  const dispatch = useDispatch();
+  console.log(allCourses.courses.courseData);
 
   useEffect(() => {
     axios.get("http://localhost:3001/courseList").then((res) => {
-      setAllCourses(res.data);
+      dispatch(fetchCourses(res.data));
     });
   }, []);
 
@@ -18,8 +22,8 @@ const AllCourses = () => {
     <>
       <Container className="mt-5">
         <Row xs={1} md={3} className="g-4">
-          {allCourses &&
-            allCourses.map((course) => (
+          {allCourses.courses.courseData &&
+            allCourses.courses.courseData.map((course) => (
               <Col>
                 <CourseCard
                   key={course._id}
