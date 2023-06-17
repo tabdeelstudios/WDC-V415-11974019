@@ -1,0 +1,24 @@
+#allMembers{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: space-around;
+    background-color: #F7DBF0;
+}
+
+.member img{
+    width: 30%;
+}
+
+.member{
+    width: 32%;
+    text-align: center;
+}
+
+.member h3{
+    font-family: 'Crete Round';
+}
+
+.member h4{
+    font-family: 'Nunito';
+}
