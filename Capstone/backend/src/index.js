@@ -4,10 +4,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Member = require("./data/models/MemberModel");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 
 mongoose.connect(process.env.MONGODB_STRING);
+
+app.get("/api/members", async (req, res) => {
+  const allMembers = await Member.find({});
+  res.send(allMembers);
+});
 
 // const teamMember = new Member({
 //   name: "Sarah",
@@ -18,6 +26,6 @@ mongoose.connect(process.env.MONGODB_STRING);
 
 // teamMember.save().then(() => console.log("Added!"));
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server running on Port 3000");
 });
